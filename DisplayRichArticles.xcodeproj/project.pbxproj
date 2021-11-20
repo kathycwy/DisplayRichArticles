@@ -16,6 +16,7 @@
 		42DC95B7274687A00070D05A /* NSAttrStringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */; };
 		42DC95BC2746DF060070D05A /* NSParaStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */; };
 		42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */; };
+		F2CA461C2749451C00F81D2B /* UITextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA461B2749451C00F81D2B /* UITextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttrStringViewController.swift; sourceTree = "<group>"; };
 		42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSParaStyleViewController.swift; sourceTree = "<group>"; };
 		42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextkitViewController.swift; sourceTree = "<group>"; };
+		F2CA461B2749451C00F81D2B /* UITextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */,
 				42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */,
 				42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */,
+				F2CA461B2749451C00F81D2B /* UITextViewController.swift */,
 				42DC95A8274648930070D05A /* Main.storyboard */,
 				42DC95AB274648960070D05A /* Assets.xcassets */,
 				42DC95AD274648960070D05A /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CA461C2749451C00F81D2B /* UITextViewController.swift in Sources */,
 				42DC95BC2746DF060070D05A /* NSParaStyleViewController.swift in Sources */,
 				42DC95A7274648930070D05A /* ViewController.swift in Sources */,
 				42DC95A3274648930070D05A /* AppDelegate.swift in Sources */,

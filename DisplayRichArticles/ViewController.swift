@@ -19,6 +19,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapButton() {
+        
+        // UITextView
+        let uiTextView_vc = storyboard?.instantiateViewController(withIdentifier: "uiTextView_vc") as! UITextViewController
+        present(uiTextView_vc, animated: true)
+        
+        //NSAttrString + NSParaStyle
         let nsAttrStr_vc = storyboard?.instantiateViewController(withIdentifier: "nsAttrStr_vc") as! NSAttrStringViewController
         present(nsAttrStr_vc, animated: true)
         let nsParaStyle_vc = storyboard?.instantiateViewController(withIdentifier: "nsParaStyle_vc") as! NSParaStyleViewController
