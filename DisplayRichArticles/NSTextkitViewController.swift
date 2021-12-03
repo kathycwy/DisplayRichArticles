@@ -18,11 +18,6 @@ class NSTextkitViewController: UIViewController {
         self.setNsTextkitTextView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func getRange(attributedString: String, substr: String) -> NSRange {
         return (attributedString as NSString).range(of: substr)
     }
@@ -76,15 +71,13 @@ Be aware that comparisons of NSAttributedString objects using the isEqual(_:) me
 The NSAttributedString class is “toll-free bridged” with its Core Foundation counterpart, CFAttributedString. See Toll-Free Bridging for more information.
 """
         
-        let attributes: [NSAttributedString.Key: Any] = [
+        var attributes: [NSAttributedString.Key: Any] = [
             .font: font,
             .paragraphStyle: paragraphStyle
         ]
-        let shadow = NSShadow()
-        shadow.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        shadow.shadowColor = UIColor.black
-        shadow.shadowBlurRadius = 2.0
-        
+        let shadow : NSShadow = NSShadow()
+           shadow.shadowOffset = CGSize(width: -2.0, height: -2.0)
+           
         var attributedText = NSMutableAttributedString(string: text, attributes: attributes)
         
         attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: getRange(attributedString: text, substr: "one of the largest research parks in Europe"))
@@ -101,9 +94,11 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
         attributedText = setAttribute(attributedText: attributedText, targetStr: "NSParagraphStyle",
                                       attrs:
                                         [.font: UIFont.systemFont(ofSize: 16),
-                                         .foregroundColor : UIColor.blue,
-                                         .strokeWidth: 2,
-                                         .strokeColor: UIColor.magenta])
+                                         .underlineStyle : 1,
+                                         .foregroundColor : UIColor.white,
+                                         .textEffect: NSAttributedString.TextEffectStyle.letterpressStyle as NSString,
+                                         .strokeWidth : 3.0,
+                                         .shadow : shadow])
         
         attributedText = setAttribute(attributedText: attributedText, targetStr: "NSMutableParagraphStyle",
                                       attrs:
@@ -125,19 +120,20 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                                          .foregroundColor : UIColor.red,
                                          .strikethroughStyle: NSUnderlineStyle.thick.rawValue])
         
-        attributedText.addAttributes([.font: UIFont.boldSystemFont(ofSize: 18),
-                                      .underlineStyle: NSUnderlineStyle.thick.rawValue,
-                                      .shadow: shadow,
-                                      .strokeWidth: 0,
-                                      .foregroundColor: UIColor.magenta], range: getRange(attributedString: text, substr: "NSAttributedString"))
-        attributedText.addAttributes([.font: UIFont.boldSystemFont(ofSize: 18),
-                                      .underlineStyle: NSUnderlineStyle.thick.rawValue,
-                                      .shadow: shadow,
-                                      .foregroundColor: UIColor.magenta], range: getRange(attributedString: text, substr: "Declaration"))
-        attributedText.addAttributes([.font: UIFont.boldSystemFont(ofSize: 18),
-                                      .underlineStyle: NSUnderlineStyle.thick.rawValue,
-                                      .shadow: shadow,
-                                      .foregroundColor: UIColor.magenta], range: getRange(attributedString: text, substr: "Overview"))
+        attributes = [
+            .font: UIFont.boldSystemFont(ofSize: 18),
+            .underlineStyle : 1,
+            .foregroundColor : UIColor.gray,
+            .textEffect: NSAttributedString.TextEffectStyle.letterpressStyle as NSString,
+            .strokeWidth : 3.0,
+            .shadow : shadow
+        ]
+        attributedText.addAttributes( attributes,
+                                      range: getRange(attributedString: text, substr: "NSAttributedString"))
+        attributedText.addAttributes(attributes,
+                                     range: getRange(attributedString: text, substr: "Declaration"))
+        attributedText.addAttributes(attributes,
+                                     range: getRange(attributedString: text, substr: "Overview"))
         
         attributedText = setAttribute(attributedText: attributedText, targetStr: "class NSAttributedString : NSObject",
                                       attrs:
@@ -145,7 +141,6 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                                          .backgroundColor: UIColor.yellow,
                                          .strokeWidth: 0,
                                          .foregroundColor: UIColor.blue])
-        
         self.nsTextkitTextView.attributedText = attributedText
         self.nsTextkitTextView.isEditable = false
         self.nsTextkitTextView.isSelectable = false
