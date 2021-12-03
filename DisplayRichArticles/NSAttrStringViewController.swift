@@ -15,25 +15,31 @@ class NSAttrStringViewController: UIViewController {
     let appYellowColor = UIColor(red: 248.0/255.0, green: 175.0/255.0, blue: 0.0, alpha: 1.0)
     let darkOrangeColor = UIColor(red: 248.0/255.0, green: 150.0/255.0, blue: 75.0/255.0, alpha: 1.0)
     
-    @IBOutlet weak var nsAttrStrLabel: UILabel!
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var fifthLabel: UILabel!
+    @IBOutlet weak var sixthLabel: UILabel!
     
+    @IBOutlet weak var showMoreExampleButton: UIButton!
     @IBOutlet weak var nsAttrStrTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        /*self.setFirstLable()
-        self.setSecondLable()
-        self.setThirdLabel()
-        self.setFourthLabel()
-        self.setFifthLable()*/
-        self.setNsAttrStrTextView()
+        if (nsAttrStrTextView != nil){
+            self.setNsAttrStrTextView()
+        }
+        if (firstLabel != nil){
+            self.setFirstLabel()
+            self.setSecondLabel()
+            self.setThirdLabel()
+            self.setFourthLabel()
+            self.setFifthLabel()
+            self.setSixthLabel()
+        }
     
     }
     
@@ -148,66 +154,122 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
         self.nsAttrStrTextView.isEditable = false
         self.nsAttrStrTextView.isSelectable = false
     }
-    /*
-    func setFirstLable() {
+    
+    func setFirstLabel() {
         self.firstLabel.numberOfLines = 0
-        let text = "This is a colorful attributed string"
+        let text = "Colourful background"
         let font = UIFont.systemFont(ofSize: 24)
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font
         ]
         let attributedText = NSMutableAttributedString(string: text, attributes: attributes)
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: getRange(attributedString: text, substr: "This"))
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.orange, range: getRange(attributedString: text, substr: "is"))
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: getRange(attributedString: text, substr: "colorful"))
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue, range: getRange(attributedString: text, substr: "attributed"))
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.yellow, range: getRange(attributedString: text, substr: "string"))
+        attributedText.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: UIColor.red,
+            range: getRange(attributedString: text, substr: "Co")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: UIColor.cyan,
+            range: getRange(attributedString: text, substr: "lo")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: UIColor.blue,
+            range: getRange(attributedString: text, substr: "ur")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: UIColor.orange,
+            range: getRange(attributedString: text, substr: "ful")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.backgroundColor,
+            value: UIColor.orange,
+            range: getRange(attributedString: text, substr: "background")
+        )
+        
         self.firstLabel.attributedText = attributedText
     }
 
-    func setSecondLable() {
+    func setSecondLabel() {
         self.secondLabel.numberOfLines = 0
-        let text = "This string is having multiple font"
+        let text = "Bold Italic BoldItalic CondensedBlack"
         let font = UIFont.systemFont(ofSize: 24)
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.firstLineHeadIndent = 5.0
-
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
-            .foregroundColor: UIColor.blue,
-            .paragraphStyle: paragraphStyle
+            .foregroundColor: UIColor.blue
         ]
         let attributedText = NSMutableAttributedString(string: text, attributes: attributes)
-        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 24), range: getRange(attributedString: text, substr: "This"))
-        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.italicSystemFont(ofSize: 24), range: getRange(attributedString: text, substr: "string"))
-        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "HelveticaNeue-BoldItalic", size: 20)!, range: getRange(attributedString: text, substr: "having"))
-        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!, range: getRange(attributedString: text, substr: "multiple"))
+        attributedText.addAttribute(
+            NSAttributedString.Key.font,
+            value: UIFont.boldSystemFont(ofSize: 24),
+            range: getRange(attributedString: text, substr: "Bold")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.font,
+            value: UIFont.italicSystemFont(ofSize: 24),
+            range: getRange(attributedString: text, substr: "Italic")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.font,
+            value:UIFont(name: "HelveticaNeue-BoldItalic", size: 20)!,
+            range: getRange(attributedString: text, substr: "BoldItalic")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.font,
+            value: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!,
+            range: getRange(attributedString: text, substr: "CondensedBlack")
+        )
         self.secondLabel.attributedText = attributedText
     }
     
     func setThirdLabel() {
         self.thirdLabel.numberOfLines = 0
-        let text = "This is a strick-through string"
+        let text = "underline text, strick-through textraised"
         let font = UIFont.systemFont(ofSize: 24)
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
-            .strokeWidth: -2,
-            .strokeColor: UIColor.black,
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.purple
         ]
+        
         let attributedText = NSMutableAttributedString(string: text, attributes: attributes)
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: getRange(attributedString: text, substr: "stroke string"))
-        attributedText.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.thick.rawValue, range: getRange(attributedString: text, substr: "strick-through"))
+        
+        attributedText.addAttributes(
+            [
+                NSAttributedString.Key.underlineStyle: 1,
+                NSAttributedString.Key.underlineColor: UIColor.brown
+            ],
+            range: getRange(attributedString: text, substr: "underline")
+        )
+        attributedText.addAttributes(
+            [
+                NSAttributedString.Key.underlineStyle: 20,
+                NSAttributedString.Key.underlineColor: UIColor.brown
+            ],
+            range: getRange(attributedString: text, substr: "text")
+        )
+        attributedText.addAttributes(
+            [
+                NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.thick.rawValue,
+                NSAttributedString.Key.strikethroughColor: UIColor.brown
+            ],
+            range: getRange(attributedString: text, substr: "strick-through")
+        )
+        attributedText.addAttribute(
+            NSAttributedString.Key.baselineOffset,
+            value: 10,
+            range: getRange(attributedString: text, substr: "raised")
+        )
         self.thirdLabel.attributedText = attributedText
     }
     
     func setFourthLabel() {
         self.fourthLabel.numberOfLines = 0
-        let text = "This string is having a shadow"
+        let text = "shadow"
         let font = UIFont.systemFont(ofSize: 24)
         
         let shadow = NSShadow()
@@ -219,30 +281,59 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
             .font: font
         ]
         let attributedText = NSMutableAttributedString(string: text, attributes: attributes)
-        attributedText.addAttribute(NSAttributedString.Key.shadow, value: shadow, range: getRange(attributedString: text, substr: "having a shadow"))
+        attributedText.addAttribute(
+            NSAttributedString.Key.shadow,
+            value: shadow,
+            range: getRange(attributedString: text, substr: "shadow")
+        )
         self.fourthLabel.attributedText = attributedText
     }
     
-    func setFifthLable() {
-        self.fifthLabel.numberOfLines = 0
-        let text = "This is a stroke string with background"
-        let font = UIFont.systemFont(ofSize: 24)
+    func setFifthLabel() {
+        self.sixthLabel.numberOfLines = 0
+        let htmlString = """
+            <!DOCTYPE html>
+            <html>
+            <body>
+            <h1>Hello!</h1>
+            <h3>This is</h3>
+            <h2>a demo text</h2>
+            <h3>created using</h3>
+            <h1>HTML!!</h1>
+            </body>
+            </html>
+        """
+        
+        guard let data = htmlString.data(using: String.Encoding.utf8) else { fatalError("incorrect htmlString") }
+        let attributedText = try! NSMutableAttributedString(
+            data: data,
+            options: [
+                NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
+            ],
+            documentAttributes: nil
+        )
         
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .backgroundColor: UIColor.yellow,
-            .strokeWidth: -2,
-            .strokeColor: UIColor.black,
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.white,
+            .strokeColor: UIColor.red,
+            .strokeWidth: 5
         ]
-        let attributedText = NSMutableAttributedString(string: text, attributes: attributes)
-        attributedText.addAttribute(NSAttributedString.Key.strokeColor, value: UIColor.red, range: getRange(attributedString: text, substr: "stroke string"))
-        attributedText.addAttribute(NSAttributedString.Key.strokeWidth, value: 2, range: getRange(attributedString: text, substr: "stroke string"))
+        attributedText.addAttributes(attributes, range: NSRange(location: 0, length: attributedText.length))
+        
         self.fifthLabel.attributedText = attributedText
     }
-*/
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func setSixthLabel() {
+        self.fifthLabel.numberOfLines = 0
+        let textAttachment = NSTextAttachment()
+        textAttachment.image = UIImage(named: "xmas.jpg")
+        let imageOffsetY: CGFloat = -15.0
+        textAttachment.bounds = CGRect(x: 0, y: imageOffsetY, width: textAttachment.image!.size.width, height: textAttachment.image!.size.height)
+        let attributedText = NSAttributedString(attachment: textAttachment)
+        
+        
+        self.sixthLabel.attributedText = attributedText
     }
 }
