@@ -63,6 +63,17 @@
 			path = WKWebView;
 			sourceTree = "<group>";
 		};
+		4225E398275BE6C300EC3F7F /* NSAttrStrNSParaStyle */ = {
+			isa = PBXGroup;
+			children = (
+				42E91F7E275A26AE00190C8A /* UIImageExtension.swift */,
+				42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */,
+				42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */,
+				42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */,
+			);
+			path = NSAttrStrNSParaStyle;
+			sourceTree = "<group>";
+		};
 		42DC9596274648920070D05A = {
 			isa = PBXGroup;
 			children = (
@@ -82,19 +93,16 @@
 		42DC95A1274648930070D05A /* DisplayRichArticles */ = {
 			isa = PBXGroup;
 			children = (
+				4225E398275BE6C300EC3F7F /* NSAttrStrNSParaStyle */,
 				4225E391275B53A200EC3F7F /* WKWebView */,
 				42E91F7B275A14FB00190C8A /* images */,
 				42DC95A2274648930070D05A /* AppDelegate.swift */,
 				42DC95A4274648930070D05A /* SceneDelegate.swift */,
 				42DC95A6274648930070D05A /* ViewController.swift */,
-				42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */,
-				42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */,
-				42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */,
 				42DC95A8274648930070D05A /* Main.storyboard */,
 				42DC95AB274648960070D05A /* Assets.xcassets */,
 				42DC95AD274648960070D05A /* LaunchScreen.storyboard */,
 				42DC95B0274648960070D05A /* Info.plist */,
-				42E91F7E275A26AE00190C8A /* UIImageExtension.swift */,
 			);
 			path = DisplayRichArticles;
 			sourceTree = "<group>";
