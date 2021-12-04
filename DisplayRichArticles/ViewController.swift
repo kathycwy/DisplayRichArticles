@@ -76,6 +76,5 @@ class ViewController: UIViewController {
         let nsTextKit_vc = storyboard?.instantiateViewController(withIdentifier: "nsTextKit_vc") as! NSTextkitViewController
         present(nsTextKit_vc, animated: true)
     }
-    
 }
 
