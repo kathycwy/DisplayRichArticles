@@ -50,7 +50,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="ftW-Zc-gHD" kind="show" id="EH2-Bn-YOA"/>
+                                                    <segue destination="WN3-1P-GLh" kind="show" id="wL8-mw-QzH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjB-Hs-bVJ">
@@ -153,22 +153,18 @@ NSParagraphStyle</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-WE-71a">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">NSAttributedString
+                                <mutableString key="text">NSAttributedString
 A string with associated attributes (such as visual style, hyperlinks, or accessibility data) for portions of its text.
 Declaration
 class NSAttributedString : NSObject
 Overview
 An NSAttributedString object manages character strings and associated sets of attributes (for example, font and kerning) that apply to individual characters or ranges of characters in the string. An association of characters and their attributes is called an attributed string. The cluster’s two public classes, NSAttributedString and NSMutableAttributedString, declare the programmatic interface for read-only attributed strings and modifiable attributed strings, respectively.
-
 An attributed string identifies attributes by name, using an NSDictionary object to store a value under the specified name. You can assign any attribute name/value pair you wish to a range of characters—it is up to your application to interpret custom attributes (see Attributed String Programming Guide). If you are using attributed strings with the Core Text framework, you can also use the attribute keys defined by that framework.
-
 You use attributed strings with any APIs that accept them, such as Core Text. The AppKit and UIKit frameworks also provide a subclass of NSMutableAttributedString, called NSTextStorage, to provide the storage for the extended text-handling system. In iOS 6 and later you can use attributed strings to display formatted text in text views, text fields, and some other controls. Both AppKit and UIKit also define extensions to the basic attributed string interface that allows you to draw their contents in the current graphic context.
-
 The default font for NSAttributedString objects is Helvetica 12-point, which may differ from the default system font for the platform. Thus, you might want to create new strings with non-default attributes suitable for your application. You can also use the NSParagraphStyle class and its subclass NSMutableParagraphStyle to encapsulate the paragraph or ruler attributes used by the NSAttributedString classes.
-
 Be aware that comparisons of NSAttributedString objects using the isEqual(_:) method look for exact equality. The comparison includes both a character-by-character string equality check and an equality check of all attributes. Such a comparison is not likely to yield a match if the string has many attributes, such as attachments, lists, and tables, for example.
 
-The NSAttributedString class is “toll-free bridged” with its Core Foundation counterpart, CFAttributedString. See Toll-Free Bridging for more information.</string>
+The NSAttributedString class is “toll-free bridged” with its Core Foundation counterpart, CFAttributedString. See Toll-Free Bridging for more information.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -421,22 +417,6 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
             </objects>
             <point key="canvasLocation" x="2219" y="808"/>
         </scene>
-        <!--WKWebView-->
-        <scene sceneID="6VQ-a2-rLa">
-            <objects>
-                <viewController id="ftW-Zc-gHD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gpl-k3-bo1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="StG-xQ-24n"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="WKWebView" id="S91-cg-riy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WjW-xn-Dpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-312" y="78"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="oNu-1G-rl5">
             <objects>
@@ -476,6 +456,80 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C02-Jc-hYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1399" y="78"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="gwX-RU-NeD">
+            <objects>
+                <viewController storyboardIdentifier="wk_vc" id="WN3-1P-GLh" customClass="WKWebViewController" customModule="DisplayRichArticles" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OZg-bg-J5K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwz-Dz-mve">
+                                <rect key="frame" x="142" y="408.5" width="130.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Custom Element"/>
+                                <connections>
+                                    <segue destination="DHh-lK-6i3" kind="show" id="zdr-ST-b0F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-qM-AiP">
+                                <rect key="frame" x="169" y="459.5" width="76.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Website"/>
+                                <connections>
+                                    <action selector="websiteTapped:" destination="WN3-1P-GLh" eventType="touchUpInside" id="YZu-Sp-6eu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6fS-9c-gCE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vsM-qM-AiP" firstAttribute="centerX" secondItem="6fS-9c-gCE" secondAttribute="centerX" id="PMc-HN-gA1"/>
+                            <constraint firstItem="vsM-qM-AiP" firstAttribute="top" secondItem="vwz-Dz-mve" secondAttribute="bottom" constant="20" id="XF7-Zf-53z"/>
+                            <constraint firstItem="vsM-qM-AiP" firstAttribute="centerY" secondItem="6fS-9c-gCE" secondAttribute="centerY" id="eCv-SC-Hdg"/>
+                            <constraint firstItem="vwz-Dz-mve" firstAttribute="centerX" secondItem="6fS-9c-gCE" secondAttribute="centerX" id="h4q-yL-lRW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qUT-59-Rge"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewI-sw-9f2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-229" y="78"/>
+        </scene>
+        <!--Web View Website Controller-->
+        <scene sceneID="WsK-84-Z4Y">
+            <objects>
+                <viewController storyboardIdentifier="wkwebsite_vc" id="3YX-gu-3Tu" customClass="WKWebViewWebsiteController" customModule="DisplayRichArticles" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mje-hO-6Ed">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8jI-YR-e0R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fgm-QU-9yw"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgG-M7-1F7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1565" y="808"/>
+        </scene>
+        <!--Web View Custom Controller-->
+        <scene sceneID="bl5-1Y-lHD">
+            <objects>
+                <viewController storyboardIdentifier="wkcustom_vc" id="DHh-lK-6i3" customClass="WKWebViewCustomController" customModule="DisplayRichArticles" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nwb-2m-oia">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="UvA-R0-lzs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sJt-qT-0L0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqK-bq-71e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-809" y="811"/>
         </scene>
     </scenes>
     <resources>
