@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qM-eC-i06">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="08Z-qY-uoc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--iOS Application Development-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DisplayRichArticles" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@ NSParagraphStyle</string>
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="QsS-xX-TRB" kind="show" id="vbJ-3X-If8"/>
+                                                    <segue destination="RgA-zC-kZQ" kind="show" id="1dA-P1-DZm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -120,11 +120,82 @@ NSParagraphStyle</string>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="fvK-GR-kmq"/>
+                    <navigationItem key="navigationItem" title="iOS Application Development" id="fvK-GR-kmq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500.00000000000006" y="-699.10714285714278"/>
+            <point key="canvasLocation" x="2320.289855072464" y="-699.10714285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rIl-6E-R5k">
+            <objects>
+                <viewController id="RgA-zC-kZQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lSW-QD-68h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaC-N6-lRm">
+                                <rect key="frame" x="156" y="305" width="103" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Introduction"/>
+                                <connections>
+                                    <segue destination="QsS-xX-TRB" kind="show" id="cJe-wB-CUT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmu-pC-Wel">
+                                <rect key="frame" x="140" y="527" width="136" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="RWTH Main Page"/>
+                                <connections>
+                                    <segue destination="hNJ-02-rJX" kind="show" id="kYJ-Pm-q1O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tpy-C7-8eZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W8h-yB-U5t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dt-0l-6EE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5830.434782608696" y="-689.0625"/>
+        </scene>
+        <!--rwthMainPage-->
+        <scene sceneID="HSC-BN-gyr">
+            <objects>
+                <viewController title="rwthMainPage" id="hNJ-02-rJX" customClass="rwthMainPageViewController" customModule="DisplayRichArticles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CfO-9m-98M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RqZ-nz-hRD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ewo-DN-DLb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RqZ-nz-hRD" firstAttribute="top" secondItem="Ewo-DN-DLb" secondAttribute="top" id="Y2C-Pu-y5Y"/>
+                            <constraint firstItem="Ewo-DN-DLb" firstAttribute="bottom" secondItem="RqZ-nz-hRD" secondAttribute="bottom" id="Zj0-05-lrq"/>
+                            <constraint firstItem="Ewo-DN-DLb" firstAttribute="trailing" secondItem="RqZ-nz-hRD" secondAttribute="trailing" id="dn0-8t-MQ1"/>
+                            <constraint firstItem="RqZ-nz-hRD" firstAttribute="leading" secondItem="Ewo-DN-DLb" secondAttribute="leading" id="e9t-OZ-ihi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rGU-fh-J6P"/>
+                    <connections>
+                        <outlet property="pageView" destination="RqZ-nz-hRD" id="STx-YR-5aq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CmD-rE-wjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6994.202898550725" y="-700.44642857142856"/>
         </scene>
         <!--UITextView-->
         <scene sceneID="1jX-8k-TU2">
@@ -153,7 +224,7 @@ NSParagraphStyle</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-WE-71a">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">NSAttributedString
+                                <string key="text">NSAttributedString
 A string with associated attributes (such as visual style, hyperlinks, or accessibility data) for portions of its text.
 Declaration
 class NSAttributedString : NSObject
@@ -164,7 +235,7 @@ You use attributed strings with any APIs that accept them, such as Core Text. Th
 The default font for NSAttributedString objects is Helvetica 12-point, which may differ from the default system font for the platform. Thus, you might want to create new strings with non-default attributes suitable for your application. You can also use the NSParagraphStyle class and its subclass NSMutableParagraphStyle to encapsulate the paragraph or ruler attributes used by the NSAttributedString classes.
 Be aware that comparisons of NSAttributedString objects using the isEqual(_:) method look for exact equality. The comparison includes both a character-by-character string equality check and an equality check of all attributes. Such a comparison is not likely to yield a match if the string has many attributes, such as attachments, lists, and tables, for example.
 
-The NSAttributedString class is “toll-free bridged” with its Core Foundation counterpart, CFAttributedString. See Toll-Free Bridging for more information.</mutableString>
+The NSAttributedString class is “toll-free bridged” with its Core Foundation counterpart, CFAttributedString. See Toll-Free Bridging for more information.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -417,24 +488,6 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
             </objects>
             <point key="canvasLocation" x="2219" y="808"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oNu-1G-rl5">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2qM-eC-i06" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5C-E4-caa">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5NR-Iq-tR8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ha7-rX-ZH1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-228" y="-699"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cwP-9F-ADE">
             <objects>
@@ -530,6 +583,24 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqK-bq-71e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-809" y="811"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fNn-eM-ZzP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="08Z-qY-uoc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOK-5v-VO3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KOg-RZ-AJ0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkT-D8-b1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410.144927536232" y="-699.10714285714278"/>
         </scene>
     </scenes>
     <resources>
