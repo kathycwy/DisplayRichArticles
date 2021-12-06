@@ -68,7 +68,8 @@ class NSParaStyleViewController: UIViewController {
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
-            .paragraphStyle: paragraphStyle
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: UIColor.label
         ]
         
         let attributedText = NSAttributedString(string: text, attributes: attributes)

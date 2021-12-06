@@ -68,7 +68,8 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
         
         var attributes: [NSAttributedString.Key: Any] = [
             .font: font,
-            .paragraphStyle: paragraphStyle
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: UIColor.label
         ]
         let shadow : NSShadow = NSShadow()
            shadow.shadowOffset = CGSize(width: -2.0, height: -2.0)
@@ -119,10 +120,10 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
         attributes = [
             .font: UIFont.boldSystemFont(ofSize: 18),
             .underlineStyle : 1,
-            .foregroundColor : UIColor.gray,
             .textEffect: NSAttributedString.TextEffectStyle.letterpressStyle as NSString,
             .strokeWidth : 3.0,
-            .shadow : shadow
+            .shadow : shadow,
+            .foregroundColor: UIColor.gray
         ]
         attributedText.addAttributes( attributes,
                                       range: getRange(attributedString: text, substr: "NSAttributedString"))

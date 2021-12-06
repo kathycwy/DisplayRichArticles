@@ -98,7 +98,8 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
                     """
         
         var attributes: [NSAttributedString.Key: Any] = [
-            .font: font
+            .font: font,
+            .foregroundColor: UIColor.label
         ]
         let shadow : NSShadow = NSShadow()
            shadow.shadowOffset = CGSize(width: -2.0, height: -2.0)
