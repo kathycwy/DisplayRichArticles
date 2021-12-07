@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AA7466F275D702800BDBDA0 /* rwthMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7466E275D702800BDBDA0 /* rwthMainPageViewController.swift */; };
 		1AA74672275D7AA100BDBDA0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA74671275D7AA100BDBDA0 /* WebKit.framework */; };
+		1AA74678275EDF3100BDBDA0 /* webNSAttributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA74677275EDF3100BDBDA0 /* webNSAttributeViewController.swift */; };
+		1AA7467A275EDF5100BDBDA0 /* webNSParaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA74679275EDF5100BDBDA0 /* webNSParaViewController.swift */; };
+		1AA7467C275EDF6C00BDBDA0 /* webCombViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7467B275EDF6C00BDBDA0 /* webCombViewController.swift */; };
 		4225E395275B53A200EC3F7F /* WKWebViewWebsiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225E392275B53A200EC3F7F /* WKWebViewWebsiteController.swift */; };
 		4225E396275B53A200EC3F7F /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225E393275B53A200EC3F7F /* WKWebViewController.swift */; };
 		4225E397275B53A200EC3F7F /* WKWebViewCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225E394275B53A200EC3F7F /* WKWebViewCustomController.swift */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		1AA7466E275D702800BDBDA0 /* rwthMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rwthMainPageViewController.swift; sourceTree = "<group>"; };
 		1AA74671275D7AA100BDBDA0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1AA74677275EDF3100BDBDA0 /* webNSAttributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webNSAttributeViewController.swift; sourceTree = "<group>"; };
+		1AA74679275EDF5100BDBDA0 /* webNSParaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webNSParaViewController.swift; sourceTree = "<group>"; };
+		1AA7467B275EDF6C00BDBDA0 /* webCombViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webCombViewController.swift; sourceTree = "<group>"; };
 		4225E392275B53A200EC3F7F /* WKWebViewWebsiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewWebsiteController.swift; sourceTree = "<group>"; };
 		4225E393275B53A200EC3F7F /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 		4225E394275B53A200EC3F7F /* WKWebViewCustomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewCustomController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */,
 				42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */,
 				1AA7466E275D702800BDBDA0 /* rwthMainPageViewController.swift */,
+				1AA74677275EDF3100BDBDA0 /* webNSAttributeViewController.swift */,
+				1AA74679275EDF5100BDBDA0 /* webNSParaViewController.swift */,
+				1AA7467B275EDF6C00BDBDA0 /* webCombViewController.swift */,
 			);
 			path = NSAttrStrNSParaStyle;
 			sourceTree = "<group>";
@@ -205,12 +214,15 @@
 				42DC95BC2746DF060070D05A /* NSParaStyleViewController.swift in Sources */,
 				42DC95A7274648930070D05A /* ViewController.swift in Sources */,
 				1AA7466F275D702800BDBDA0 /* rwthMainPageViewController.swift in Sources */,
+				1AA74678275EDF3100BDBDA0 /* webNSAttributeViewController.swift in Sources */,
 				4225E397275B53A200EC3F7F /* WKWebViewCustomController.swift in Sources */,
 				4225E395275B53A200EC3F7F /* WKWebViewWebsiteController.swift in Sources */,
+				1AA7467C275EDF6C00BDBDA0 /* webCombViewController.swift in Sources */,
 				4225E396275B53A200EC3F7F /* WKWebViewController.swift in Sources */,
 				42E91F7F275A26AE00190C8A /* UIImageExtension.swift in Sources */,
 				42DC95A3274648930070D05A /* AppDelegate.swift in Sources */,
 				42DC95B7274687A00070D05A /* NSAttrStringViewController.swift in Sources */,
+				1AA7467A275EDF5100BDBDA0 /* webNSParaViewController.swift in Sources */,
 				42DC95A5274648930070D05A /* SceneDelegate.swift in Sources */,
 				42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */,
 			);

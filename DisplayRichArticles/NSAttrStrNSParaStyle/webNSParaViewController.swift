@@ -1,22 +1,20 @@
 //
-//  rwthMainPageViewController.swift
+//  webNSParaViewController.swift
 //  DisplayRichArticles
 //
-//  Created by Fengwu Lu on 05.12.21.
+//  Created by Fengwu Lu on 07.12.21.
 //
 
 import UIKit
-import WebKit
 
-class rwthMainPageViewController: UIViewController {
+class webNSParaViewController: UIViewController {
 
-    @IBOutlet weak var pageView: UITextView!
-   
+    @IBOutlet weak var astaNSParagraphTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getHTMLContent()
-        pageView.isEditable = false
-        pageView.isSelectable = true
+        astaNSParagraphTextView.isEditable = false
+        astaNSParagraphTextView.isSelectable = true
         // Do any additional setup after loading the view.
     }
     
@@ -27,17 +25,14 @@ class rwthMainPageViewController: UIViewController {
                 let htmlSourceCode = try String(contentsOf: url)
                 let contentData = Data(htmlSourceCode.utf8)
                 let text = try? NSAttributedString(data: contentData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-                self.pageView.attributedText = text
+                self.astaNSParagraphTextView.attributedText = text
                
             } catch {
-                self.pageView.text = "This Content can not be loaded"
+                self.astaNSParagraphTextView.text = "This Content can not be loaded"
             }
         }
         
     }
-    
-    
-        }
     /*
     // MARK: - Navigation
 
@@ -48,4 +43,4 @@ class rwthMainPageViewController: UIViewController {
     }
     */
 
-
+}

@@ -1,22 +1,20 @@
 //
-//  rwthMainPageViewController.swift
+//  webNSAttributeViewController.swift
 //  DisplayRichArticles
 //
-//  Created by Fengwu Lu on 05.12.21.
+//  Created by Fengwu Lu on 07.12.21.
 //
 
 import UIKit
-import WebKit
 
-class rwthMainPageViewController: UIViewController {
+class webNSAttributeViewController: UIViewController {
 
-    @IBOutlet weak var pageView: UITextView!
-   
+    @IBOutlet weak var astaNSAttributeTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getHTMLContent()
-        pageView.isEditable = false
-        pageView.isSelectable = true
+        astaNSAttributeTextView.isEditable = false
+        astaNSAttributeTextView.isSelectable = true
         // Do any additional setup after loading the view.
     }
     
@@ -27,17 +25,14 @@ class rwthMainPageViewController: UIViewController {
                 let htmlSourceCode = try String(contentsOf: url)
                 let contentData = Data(htmlSourceCode.utf8)
                 let text = try? NSAttributedString(data: contentData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-                self.pageView.attributedText = text
+                self.astaNSAttributeTextView.attributedText = text
                
             } catch {
-                self.pageView.text = "This Content can not be loaded"
+                self.astaNSAttributeTextView.text = "This Content can not be loaded"
             }
         }
         
     }
-    
-    
-        }
     /*
     // MARK: - Navigation
 
@@ -48,4 +43,4 @@ class rwthMainPageViewController: UIViewController {
     }
     */
 
-
+}

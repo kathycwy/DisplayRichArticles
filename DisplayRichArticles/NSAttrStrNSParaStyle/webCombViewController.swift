@@ -1,25 +1,22 @@
 //
-//  rwthMainPageViewController.swift
+//  webCombViewController.swift
 //  DisplayRichArticles
 //
-//  Created by Fengwu Lu on 05.12.21.
+//  Created by Fengwu Lu on 07.12.21.
 //
 
 import UIKit
-import WebKit
 
-class rwthMainPageViewController: UIViewController {
+class webCombViewController: UIViewController {
 
-    @IBOutlet weak var pageView: UITextView!
-   
+    @IBOutlet weak var astaNSCombTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getHTMLContent()
-        pageView.isEditable = false
-        pageView.isSelectable = true
+        astaNSCombTextView.isEditable = false
+        astaNSCombTextView.isSelectable = true
         // Do any additional setup after loading the view.
     }
-    
     func getHTMLContent(){
       
         if let url = URL(string: "https://www.asta.rwth-aachen.de/corona/"){
@@ -27,17 +24,15 @@ class rwthMainPageViewController: UIViewController {
                 let htmlSourceCode = try String(contentsOf: url)
                 let contentData = Data(htmlSourceCode.utf8)
                 let text = try? NSAttributedString(data: contentData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-                self.pageView.attributedText = text
+                self.astaNSCombTextView.attributedText = text
                
             } catch {
-                self.pageView.text = "This Content can not be loaded"
+                self.astaNSCombTextView.text = "This Content can not be loaded"
             }
         }
         
     }
-    
-    
-        }
+
     /*
     // MARK: - Navigation
 
@@ -48,4 +43,4 @@ class rwthMainPageViewController: UIViewController {
     }
     */
 
-
+}
