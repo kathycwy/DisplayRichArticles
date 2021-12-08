@@ -14,27 +14,29 @@ class rwthMainPageViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getHTMLContent()
+        pageView.attributedText = getHTMLContent()
         pageView.isEditable = false
         pageView.isSelectable = true
         // Do any additional setup after loading the view.
     }
-    
-    func getHTMLContent(){
-      
+    //get target HTML Content from URL and convert to NSAttributedString
+    func getHTMLContent() -> NSAttributedString{
         if let url = URL(string: "https://www.asta.rwth-aachen.de/corona/"){
             do {
                 let htmlSourceCode = try String(contentsOf: url)
                 let contentData = Data(htmlSourceCode.utf8)
-                let text = try? NSAttributedString(data: contentData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-                self.pageView.attributedText = text
-               
+                let text = try! NSAttributedString(data: contentData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+                return text
             } catch {
-                self.pageView.text = "This Content can not be loaded"
+                
             }
         }
-        
+        return NSAttributedString(string: "This content can not be loaded!")
     }
+    
+    
+    
+
     
     
         }
