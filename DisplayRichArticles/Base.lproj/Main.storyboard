@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="08Z-qY-uoc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -409,7 +408,7 @@ Cg
         <!--UITextView-->
         <scene sceneID="1jX-8k-TU2">
             <objects>
-                <viewController id="zzn-P4-oRv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tv_vc" id="zzn-P4-oRv" customClass="UITextViewController" customModule="DisplayRichArticles" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ocJ-Tj-Shx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
