@@ -26,6 +26,7 @@
 		42E91F7D275A155E00190C8A /* xmas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42E91F7C275A155E00190C8A /* xmas.jpg */; };
 		42E91F7F275A26AE00190C8A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E91F7E275A26AE00190C8A /* UIImageExtension.swift */; };
 		42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */; };
+		F2CA461C2749451C00F81D2B /* UITextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA461B2749451C00F81D2B /* UITextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		42E91F7C275A155E00190C8A /* xmas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xmas.jpg; sourceTree = "<group>"; };
 		42E91F7E275A26AE00190C8A /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextkitViewController.swift; sourceTree = "<group>"; };
+		F2CA461B2749451C00F81D2B /* UITextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CA461C2749451C00F81D2B /* UITextViewController.swift in Sources */,
 				42DC95BC2746DF060070D05A /* NSParaStyleViewController.swift in Sources */,
 				42DC95A7274648930070D05A /* ViewController.swift in Sources */,
 				1AA7466F275D702800BDBDA0 /* rwthMainPageViewController.swift in Sources */,
