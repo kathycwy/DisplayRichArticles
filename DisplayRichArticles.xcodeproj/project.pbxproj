@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA7466F275D702800BDBDA0 /* rwthMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7466E275D702800BDBDA0 /* rwthMainPageViewController.swift */; };
+		1AA74672275D7AA100BDBDA0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA74671275D7AA100BDBDA0 /* WebKit.framework */; };
+		1AA74678275EDF3100BDBDA0 /* webNSAttributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA74677275EDF3100BDBDA0 /* webNSAttributeViewController.swift */; };
+		1AA7467A275EDF5100BDBDA0 /* webNSParaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA74679275EDF5100BDBDA0 /* webNSParaViewController.swift */; };
+		1AA7467C275EDF6C00BDBDA0 /* webCombViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA7467B275EDF6C00BDBDA0 /* webCombViewController.swift */; };
+		4225E395275B53A200EC3F7F /* WKWebViewWebsiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225E392275B53A200EC3F7F /* WKWebViewWebsiteController.swift */; };
+		4225E396275B53A200EC3F7F /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225E393275B53A200EC3F7F /* WKWebViewController.swift */; };
+		4225E397275B53A200EC3F7F /* WKWebViewCustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4225E394275B53A200EC3F7F /* WKWebViewCustomController.swift */; };
 		42DC95A3274648930070D05A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95A2274648930070D05A /* AppDelegate.swift */; };
 		42DC95A5274648930070D05A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95A4274648930070D05A /* SceneDelegate.swift */; };
 		42DC95A7274648930070D05A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95A6274648930070D05A /* ViewController.swift */; };
@@ -15,11 +23,21 @@
 		42DC95AF274648960070D05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42DC95AD274648960070D05A /* LaunchScreen.storyboard */; };
 		42DC95B7274687A00070D05A /* NSAttrStringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */; };
 		42DC95BC2746DF060070D05A /* NSParaStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */; };
+		42E91F7D275A155E00190C8A /* xmas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42E91F7C275A155E00190C8A /* xmas.jpg */; };
+		42E91F7F275A26AE00190C8A /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E91F7E275A26AE00190C8A /* UIImageExtension.swift */; };
 		42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */; };
 		F2CA461C2749451C00F81D2B /* UITextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA461B2749451C00F81D2B /* UITextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AA7466E275D702800BDBDA0 /* rwthMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rwthMainPageViewController.swift; sourceTree = "<group>"; };
+		1AA74671275D7AA100BDBDA0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1AA74677275EDF3100BDBDA0 /* webNSAttributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webNSAttributeViewController.swift; sourceTree = "<group>"; };
+		1AA74679275EDF5100BDBDA0 /* webNSParaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webNSParaViewController.swift; sourceTree = "<group>"; };
+		1AA7467B275EDF6C00BDBDA0 /* webCombViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webCombViewController.swift; sourceTree = "<group>"; };
+		4225E392275B53A200EC3F7F /* WKWebViewWebsiteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewWebsiteController.swift; sourceTree = "<group>"; };
+		4225E393275B53A200EC3F7F /* WKWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
+		4225E394275B53A200EC3F7F /* WKWebViewCustomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebViewCustomController.swift; sourceTree = "<group>"; };
 		42DC959F274648930070D05A /* DisplayRichArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisplayRichArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DC95A2274648930070D05A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42DC95A4274648930070D05A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +48,8 @@
 		42DC95B0274648960070D05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttrStringViewController.swift; sourceTree = "<group>"; };
 		42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSParaStyleViewController.swift; sourceTree = "<group>"; };
+		42E91F7C275A155E00190C8A /* xmas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xmas.jpg; sourceTree = "<group>"; };
+		42E91F7E275A26AE00190C8A /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextkitViewController.swift; sourceTree = "<group>"; };
 		F2CA461B2749451C00F81D2B /* UITextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,17 +59,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA74672275D7AA100BDBDA0 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA74670275D7AA100BDBDA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AA74671275D7AA100BDBDA0 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4225E391275B53A200EC3F7F /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				4225E392275B53A200EC3F7F /* WKWebViewWebsiteController.swift */,
+				4225E393275B53A200EC3F7F /* WKWebViewController.swift */,
+				4225E394275B53A200EC3F7F /* WKWebViewCustomController.swift */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
+		4225E398275BE6C300EC3F7F /* NSAttrStrNSParaStyle */ = {
+			isa = PBXGroup;
+			children = (
+				42E91F7E275A26AE00190C8A /* UIImageExtension.swift */,
+				42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */,
+				42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */,
+				42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */,
+				1AA7466E275D702800BDBDA0 /* rwthMainPageViewController.swift */,
+				1AA74677275EDF3100BDBDA0 /* webNSAttributeViewController.swift */,
+				1AA74679275EDF5100BDBDA0 /* webNSParaViewController.swift */,
+				1AA7467B275EDF6C00BDBDA0 /* webCombViewController.swift */,
+			);
+			path = NSAttrStrNSParaStyle;
+			sourceTree = "<group>";
+		};
 		42DC9596274648920070D05A = {
 			isa = PBXGroup;
 			children = (
 				42DC95A1274648930070D05A /* DisplayRichArticles */,
 				42DC95A0274648930070D05A /* Products */,
+				1AA74670275D7AA100BDBDA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,19 +119,26 @@
 		42DC95A1274648930070D05A /* DisplayRichArticles */ = {
 			isa = PBXGroup;
 			children = (
+				4225E398275BE6C300EC3F7F /* NSAttrStrNSParaStyle */,
+				4225E391275B53A200EC3F7F /* WKWebView */,
+				42E91F7B275A14FB00190C8A /* images */,
 				42DC95A2274648930070D05A /* AppDelegate.swift */,
 				42DC95A4274648930070D05A /* SceneDelegate.swift */,
 				42DC95A6274648930070D05A /* ViewController.swift */,
-				42DC95B6274687A00070D05A /* NSAttrStringViewController.swift */,
-				42DC95BB2746DF060070D05A /* NSParaStyleViewController.swift */,
-				42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */,
-				F2CA461B2749451C00F81D2B /* UITextViewController.swift */,
 				42DC95A8274648930070D05A /* Main.storyboard */,
 				42DC95AB274648960070D05A /* Assets.xcassets */,
 				42DC95AD274648960070D05A /* LaunchScreen.storyboard */,
 				42DC95B0274648960070D05A /* Info.plist */,
 			);
 			path = DisplayRichArticles;
+			sourceTree = "<group>";
+		};
+		42E91F7B275A14FB00190C8A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				42E91F7C275A155E00190C8A /* xmas.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E91F7D275A155E00190C8A /* xmas.jpg in Resources */,
 				42DC95AF274648960070D05A /* LaunchScreen.storyboard in Resources */,
 				42DC95AC274648960070D05A /* Assets.xcassets in Resources */,
 				42DC95AA274648930070D05A /* Main.storyboard in Resources */,
@@ -153,8 +216,16 @@
 				F2CA461C2749451C00F81D2B /* UITextViewController.swift in Sources */,
 				42DC95BC2746DF060070D05A /* NSParaStyleViewController.swift in Sources */,
 				42DC95A7274648930070D05A /* ViewController.swift in Sources */,
+				1AA7466F275D702800BDBDA0 /* rwthMainPageViewController.swift in Sources */,
+				1AA74678275EDF3100BDBDA0 /* webNSAttributeViewController.swift in Sources */,
+				4225E397275B53A200EC3F7F /* WKWebViewCustomController.swift in Sources */,
+				4225E395275B53A200EC3F7F /* WKWebViewWebsiteController.swift in Sources */,
+				1AA7467C275EDF6C00BDBDA0 /* webCombViewController.swift in Sources */,
+				4225E396275B53A200EC3F7F /* WKWebViewController.swift in Sources */,
+				42E91F7F275A26AE00190C8A /* UIImageExtension.swift in Sources */,
 				42DC95A3274648930070D05A /* AppDelegate.swift in Sources */,
 				42DC95B7274687A00070D05A /* NSAttrStringViewController.swift in Sources */,
+				1AA7467A275EDF5100BDBDA0 /* webNSParaViewController.swift in Sources */,
 				42DC95A5274648930070D05A /* SceneDelegate.swift in Sources */,
 				42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */,
 			);
@@ -305,6 +376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQT2BA5L5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DisplayRichArticles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -312,6 +384,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +405,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQT2BA5L5W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DisplayRichArticles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -339,6 +413,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
