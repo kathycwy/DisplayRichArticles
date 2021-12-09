@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class WKWebViewWebsiteController: UIViewController {
+class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
 
     private let webView : WKWebView = {
        
@@ -22,8 +22,11 @@ class WKWebViewWebsiteController: UIViewController {
     }()
     
     private let url:URL
-    @objc private func didTapDone(){
-        print("done pressed")
+    
+    var progressView : UIProgressView!
+    
+    @objc private func crossClicked(){
+        print("clicked clicked")
         dismiss(animated: true, completion: nil)
         
     }
@@ -38,9 +41,9 @@ class WKWebViewWebsiteController: UIViewController {
         webView.goForward()
     }
     
-    let cross = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(didTapDone))
-    let back = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(goBack))
-    let front = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(goForward))
+    private lazy var  cross = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(crossClicked))
+    private lazy var  back = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(goBack))
+    private lazy var  front = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(goForward))
     
     init(url:URL,title:String){
         self.url = url
@@ -53,12 +56,17 @@ class WKWebViewWebsiteController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
         
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (keyPath == "loading") {
             back.isEnabled = webView.canGoBack
             front.isEnabled = webView.canGoForward
+        }
+        
+        if (keyPath == "estimatedProgress") {
+            
+            progressView?.isHidden = webView.estimatedProgress == 1
+            progressView?.setProgress(Float(webView.estimatedProgress), animated: true)
         }
     }
 
@@ -66,12 +74,31 @@ class WKWebViewWebsiteController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(webView)
+        
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.sizeToFit()
+        view.addSubview(progressView)
+
         configureButtons()
         back.isEnabled = false
         front.isEnabled = false
       
         webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         webView.load(URLRequest(url: url))
+        webView.navigationDelegate = self
+        
+        if #available(iOS 11, *) {
+            let dataStore = WKWebsiteDataStore.default()
+            dataStore.httpCookieStore.getAllCookies({ (cookies) in
+                print(cookies)
+            })
+        } else {
+            guard let cookies = HTTPCookieStorage.shared.cookies else {
+                return
+            }
+            print(cookies)
+        }
     }
     
 
@@ -81,15 +108,26 @@ class WKWebViewWebsiteController: UIViewController {
     }
 
     private func configureButtons(){
-        
         navigationItem.leftBarButtonItems = [cross,back,front]
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(didTapRefresh))
         
-       
-        
     }
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let host = navigationAction.request.url?.host {
+            if host == "hci.rwth-aachen.de" {
+                decisionHandler(.allow)
+                return
+            }
+        }
+
+        decisionHandler(.cancel)
+    }
+        
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        progressView?.setProgress(0.0, animated: false)
+    }
     
 }
 
