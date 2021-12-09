@@ -409,8 +409,8 @@ Cg
         <!--UITextView-->
         <scene sceneID="1jX-8k-TU2">
             <objects>
-                <viewController storyboardIdentifier="uiTextView_vc" id="zzn-P4-oRv" customClass="UITextViewController" customModule="DisplayRichArticles" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ocJ-Tj-Shx" customClass="UIScrollView" customModule="DisplayRichArticles" customModuleProvider="target">
+                <viewController id="zzn-P4-oRv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ocJ-Tj-Shx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4eH-8P-KNF"/>
