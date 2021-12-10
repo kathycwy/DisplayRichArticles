@@ -16,6 +16,8 @@ class commentSectionViewController: UIViewController {
         super.viewDidLoad()
         tblCommentView.estimatedRowHeight = 60
         tblCommentView.rowHeight = UITableView.automaticDimension
+        self.inputComment.layer.borderWidth = 1.0
+        self.inputComment.layer.borderColor = UIColor.gray.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +46,19 @@ extension commentSectionViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TextTableViewCell
-        cell.textComment.text = arrComments[indexPath.row]
+        let font = UIFont.systemFont(ofSize: 24)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.firstLineHeadIndent = 5.0
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.blue,
+            .paragraphStyle: paragraphStyle
+        ]
+
+        let attributedText = NSAttributedString(string: arrComments[indexPath.row], attributes: attributes)
+        cell.textComment.attributedText = attributedText
         return cell
     }
 }

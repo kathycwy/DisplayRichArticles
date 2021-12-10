@@ -1053,20 +1053,19 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ujz-sC-cmZ">
-                                                    <rect key="frame" x="24" y="15" width="374" height="30"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujz-sC-cmZ">
+                                                    <rect key="frame" x="20" y="11" width="374" height="38"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="textComment"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="top" secondItem="qMO-hz-qhZ" secondAttribute="topMargin" constant="4" id="4Zs-oi-XJf"/>
-                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="trailing" secondItem="qMO-hz-qhZ" secondAttribute="trailingMargin" constant="4" id="99B-yK-Pul"/>
-                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="leading" secondItem="qMO-hz-qhZ" secondAttribute="leadingMargin" constant="4" id="Waa-7u-8xm"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ujz-sC-cmZ" secondAttribute="bottom" constant="4" id="k0z-9z-zS4"/>
+                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="top" secondItem="qMO-hz-qhZ" secondAttribute="topMargin" id="4Zs-oi-XJf"/>
+                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="trailing" secondItem="qMO-hz-qhZ" secondAttribute="trailingMargin" id="99B-yK-Pul"/>
+                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="leading" secondItem="qMO-hz-qhZ" secondAttribute="leadingMargin" id="Waa-7u-8xm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ujz-sC-cmZ" secondAttribute="bottom" id="k0z-9z-zS4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1086,7 +1085,6 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AGf-uR-pWP">
                                         <rect key="frame" x="8" y="0.0" width="308" height="52"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Default text trying it tobe autosizeable, blah sahsdiojasio sdfioas hi aisjd aiosj isdojfiods maisojdas iaosjdio j aoisjdas ajiso jaios djas</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
