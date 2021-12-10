@@ -9,11 +9,13 @@ import UIKit
 
 class commentSectionViewController: UIViewController {
     
-    @IBOutlet weak var txtComment: UITextView!
+    @IBOutlet weak var inputComment: UITextView!
     @IBOutlet weak var tblCommentView: UITableView!
     var arrComments = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tblCommentView.estimatedRowHeight = 60
+        tblCommentView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,14 +24,14 @@ class commentSectionViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        txtComment.becomeFirstResponder()
+        inputComment.becomeFirstResponder()
     }
     
     @IBAction func btnSendTapped(_ sender: UIButton) {
-        let commentTxt = txtComment.text!
+        let commentTxt = inputComment.text!
         arrComments.append(commentTxt)
         tblCommentView.reloadData()
-        txtComment.resignFirstResponder()
+        inputComment.resignFirstResponder()
     }
     
 }
@@ -41,8 +43,8 @@ extension commentSectionViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arrComments[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TextTableViewCell
+        cell.textComment.text = arrComments[indexPath.row]
         return cell
     }
 }

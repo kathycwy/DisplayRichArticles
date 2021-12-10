@@ -1016,50 +1016,60 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-yI-LAc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="605"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-yI-LAc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="sNl-sG-nb5" style="IBUITableViewCellStyleDefault" id="xpb-IR-PJt">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="xpb-IR-PJt" customClass="TextTableViewCell" customModule="DisplayRichArticles" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpb-IR-PJt" id="qMO-hz-qhZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sNl-sG-nb5">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ujz-sC-cmZ">
+                                                    <rect key="frame" x="24" y="15" width="374" height="30"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="textComment"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="top" secondItem="qMO-hz-qhZ" secondAttribute="topMargin" constant="4" id="4Zs-oi-XJf"/>
+                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="trailing" secondItem="qMO-hz-qhZ" secondAttribute="trailingMargin" constant="4" id="99B-yK-Pul"/>
+                                                <constraint firstItem="ujz-sC-cmZ" firstAttribute="leading" secondItem="qMO-hz-qhZ" secondAttribute="leadingMargin" constant="4" id="Waa-7u-8xm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ujz-sC-cmZ" secondAttribute="bottom" constant="4" id="k0z-9z-zS4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textComment" destination="ujz-sC-cmZ" id="niO-Qb-4pj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="suS-mU-Cwr" id="UY1-pU-YDB"/>
                                     <outlet property="delegate" destination="suS-mU-Cwr" id="IiU-XD-6jJ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOs-w8-swv">
-                                <rect key="frame" x="0.0" y="701" width="414" height="161"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOs-w8-swv">
+                                <rect key="frame" x="0.0" y="816" width="414" height="52"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AGf-uR-pWP">
-                                        <rect key="frame" x="8" y="16" width="323" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AGf-uR-pWP">
+                                        <rect key="frame" x="8" y="0.0" width="308" height="52"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <string key="text">Default text trying it tobe autosizeable, blah sahsdiojasio sdfioas hi aisjd aiosj isdojfiods maisojdas iaosjdio j aoisjdas ajiso jaios djas</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVo-u8-5Ay">
-                                        <rect key="frame" x="344" y="65" width="58" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVo-u8-5Ay">
+                                        <rect key="frame" x="324" y="9" width="82" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="82" id="WEo-q8-OYD"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Send"/>
                                         <connections>
@@ -1068,15 +1078,34 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="AGf-uR-pWP" firstAttribute="centerY" secondItem="NVo-u8-5Ay" secondAttribute="centerY" id="13K-Jj-bnA"/>
+                                    <constraint firstItem="AGf-uR-pWP" firstAttribute="top" secondItem="BOs-w8-swv" secondAttribute="top" id="3Hs-NU-qrg"/>
+                                    <constraint firstItem="NVo-u8-5Ay" firstAttribute="top" secondItem="BOs-w8-swv" secondAttribute="top" constant="9" id="8VG-Yg-Bbv"/>
+                                    <constraint firstItem="NVo-u8-5Ay" firstAttribute="leading" secondItem="AGf-uR-pWP" secondAttribute="trailing" constant="8" id="AbF-OG-Z66"/>
+                                    <constraint firstItem="AGf-uR-pWP" firstAttribute="centerY" secondItem="BOs-w8-swv" secondAttribute="centerY" id="GFB-tE-lbz"/>
+                                    <constraint firstItem="AGf-uR-pWP" firstAttribute="leading" secondItem="BOs-w8-swv" secondAttribute="leadingMargin" id="OgC-pv-dbJ"/>
+                                    <constraint firstItem="NVo-u8-5Ay" firstAttribute="trailing" secondItem="BOs-w8-swv" secondAttribute="trailingMargin" id="tS0-Nk-9tc"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YO3-Ab-oEz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xcq-yI-LAc" firstAttribute="leading" secondItem="YO3-Ab-oEz" secondAttribute="leading" id="7Ex-zd-mFN"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="BOs-w8-swv" secondAttribute="bottom" constant="-6" id="PLP-s6-dno"/>
+                            <constraint firstItem="Xcq-yI-LAc" firstAttribute="centerY" secondItem="8Fr-h2-AbX" secondAttribute="centerY" id="Qhu-gV-ij8"/>
+                            <constraint firstItem="BOs-w8-swv" firstAttribute="top" secondItem="Xcq-yI-LAc" secondAttribute="bottom" constant="8" id="RUl-1F-Hri"/>
+                            <constraint firstItem="Xcq-yI-LAc" firstAttribute="centerX" secondItem="8Fr-h2-AbX" secondAttribute="centerX" id="Rz4-a8-3dt"/>
+                            <constraint firstItem="Xcq-yI-LAc" firstAttribute="top" secondItem="YO3-Ab-oEz" secondAttribute="top" id="XXf-MM-Pck"/>
+                            <constraint firstItem="Xcq-yI-LAc" firstAttribute="leading" secondItem="BOs-w8-swv" secondAttribute="leading" id="Xo9-ha-j4K"/>
+                            <constraint firstItem="Xcq-yI-LAc" firstAttribute="trailing" secondItem="BOs-w8-swv" secondAttribute="trailing" id="hmR-DW-Ns8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comment Section" id="pkH-vg-Q29"/>
                     <connections>
+                        <outlet property="inputComment" destination="AGf-uR-pWP" id="jLa-db-aig"/>
                         <outlet property="tblCommentView" destination="Xcq-yI-LAc" id="ufM-qo-BNG"/>
-                        <outlet property="txtComment" destination="AGf-uR-pWP" id="gJa-Ae-MIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSd-Jz-vky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
