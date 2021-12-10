@@ -40,17 +40,22 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
     @objc private func goForward(){
         webView.goForward()
     }
+    @objc private func goShare(){
+        if let myUrl = webView.url {
+            UIApplication.shared.open(myUrl)
+        }
+    }
     
     private lazy var  cross = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(crossClicked))
     private lazy var  back = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(goBack))
     private lazy var  front = UIBarButtonItem(barButtonSystemItem: .fastForward, target: self, action: #selector(goForward))
+    private lazy var  share = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(goShare))
+    private lazy var refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(didTapRefresh))
+
     
     init(url:URL,title:String){
         self.url = url
         super.init(nibName: nil, bundle: nil)
-        self.title = title
-        _ = self.view
-
     }
     
     required init?(coder: NSCoder) {
@@ -64,10 +69,15 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
         }
         
         if (keyPath == "estimatedProgress") {
-            
             progressView?.isHidden = webView.estimatedProgress == 1
             progressView?.setProgress(Float(webView.estimatedProgress), animated: true)
         }
+        if keyPath == "title" {
+            if let title = webView.title {
+                navigationItem.title = title.components(separatedBy: "-")[0]
+            }
+        }
+
     }
 
     override func viewDidLoad() {
@@ -85,6 +95,8 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
       
         webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
+
         webView.load(URLRequest(url: url))
         webView.navigationDelegate = self
         
@@ -109,9 +121,7 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
 
     private func configureButtons(){
         navigationItem.leftBarButtonItems = [cross,back,front]
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(didTapRefresh))
-        
+        navigationItem.rightBarButtonItems = [share,refresh]
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -122,7 +132,7 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
                 return
             }
             else {
-                let alertController = UIAlertController(title: "iOScreator", message:
+                let alertController = UIAlertController(title: "Not Allowed", message:
                         "Oops! You can't load that URL", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
                 self.present(alertController, animated: true, completion: nil)
@@ -134,7 +144,6 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         progressView?.setProgress(0.0, animated: false)
     }
-    
 }
 
 
