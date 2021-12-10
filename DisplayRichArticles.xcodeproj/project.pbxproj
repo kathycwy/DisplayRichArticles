@@ -28,6 +28,8 @@
 		42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */; };
 		597DED3B2763AD6B0039ED98 /* hello-world.html in Resources */ = {isa = PBXBuildFile; fileRef = 597DED3A2763AD6B0039ED98 /* hello-world.html */; };
 		F28D63842761FE9300EB642F /* UITextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D63832761FE9300EB642F /* UITextViewController.swift */; };
+		FB3A59942763AAB900042C44 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A59932763AAB800042C44 /* TextTableViewCell.swift */; };
+		FB59F59127625ABC006BE6A0 /* commentSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F59027625ABC006BE6A0 /* commentSectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		42FCF5EC2747D9D900A364EA /* NSTextkitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextkitViewController.swift; sourceTree = "<group>"; };
 		597DED3A2763AD6B0039ED98 /* hello-world.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "hello-world.html"; sourceTree = "<group>"; };
 		F28D63832761FE9300EB642F /* UITextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewController.swift; sourceTree = "<group>"; };
+		FB3A59932763AAB800042C44 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		FB59F59027625ABC006BE6A0 /* commentSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentSectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				F28D63832761FE9300EB642F /* UITextViewController.swift */,
+				FB59F59027625ABC006BE6A0 /* commentSectionViewController.swift */,
+				FB3A59932763AAB800042C44 /* TextTableViewCell.swift */,
 			);
 			path = "UILabel&UITextView";
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				42DC95A7274648930070D05A /* ViewController.swift in Sources */,
 				F28D63842761FE9300EB642F /* UITextViewController.swift in Sources */,
 				1AA7466F275D702800BDBDA0 /* rwthMainPageViewController.swift in Sources */,
+				FB59F59127625ABC006BE6A0 /* commentSectionViewController.swift in Sources */,
 				1AA74678275EDF3100BDBDA0 /* webNSAttributeViewController.swift in Sources */,
 				4225E397275B53A200EC3F7F /* WKWebViewCustomController.swift in Sources */,
 				4225E395275B53A200EC3F7F /* WKWebViewWebsiteController.swift in Sources */,
@@ -238,6 +245,7 @@
 				42E91F7F275A26AE00190C8A /* UIImageExtension.swift in Sources */,
 				42DC95A3274648930070D05A /* AppDelegate.swift in Sources */,
 				42DC95B7274687A00070D05A /* NSAttrStringViewController.swift in Sources */,
+				FB3A59942763AAB900042C44 /* TextTableViewCell.swift in Sources */,
 				1AA7467A275EDF5100BDBDA0 /* webNSParaViewController.swift in Sources */,
 				42DC95A5274648930070D05A /* SceneDelegate.swift in Sources */,
 				42FCF5ED2747D9D900A364EA /* NSTextkitViewController.swift in Sources */,
