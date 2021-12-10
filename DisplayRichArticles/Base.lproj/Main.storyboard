@@ -256,6 +256,14 @@ Cg
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                 <color key="value" systemColor="systemBrownColor"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="W8h-yB-U5t"/>
@@ -529,65 +537,112 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Mai-BV-vQP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="248"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="503.5"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17b-vJ-h21">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Sample 1: Setting Text Attributes">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="17" name="Futura-CondensedExtraBold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvj-o3-VFq">
+                                                <rect key="frame" x="0.0" y="47" width="414" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-8g-IaS">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="92.5" width="414" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-Uj-qbx">
-                                                <rect key="frame" x="0.0" y="45.5" width="414" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="138" width="414" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaP-he-BX8">
-                                                <rect key="frame" x="0.0" y="91" width="414" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="183.5" width="414" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm2-bv-M4A">
-                                                <rect key="frame" x="0.0" y="136.5" width="414" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="229" width="414" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8S-P5-ZDv">
-                                                <rect key="frame" x="0.0" y="182" width="414" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a69-Gi-hnF">
+                                                <rect key="frame" x="0.0" y="274.5" width="414" height="22"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Sample 2: Loading Image">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="17" name="Futura-CondensedExtraBold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample 3: Loading Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-kc-Jaf">
+                                                <rect key="frame" x="0.0" y="321.5" width="414" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-kc-Jaf">
-                                                <rect key="frame" x="0.0" y="227.5" width="414" height="20.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Here is the link of the image" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7J4-Hf-Mst">
+                                                <rect key="frame" x="0.0" y="367" width="414" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" link="YES"/>
+                                                </accessibility>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8S-P5-ZDv">
+                                                <rect key="frame" x="0.0" y="425" width="414" height="33"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Sample 3: Loading HTML">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="17" name="Futura-CondensedExtraBold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKE-Wg-oab">
+                                                <rect key="frame" x="0.0" y="483" width="414" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="7J4-Hf-Mst" firstAttribute="height" secondItem="J8S-P5-ZDv" secondAttribute="height" id="8AC-GO-Ofl"/>
+                                        </constraints>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="123" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-c3-ftR">
-                                        <rect key="frame" x="0.0" y="184.5" width="414" height="43"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ktn-c3-ftR" firstAttribute="leading" secondItem="Mai-BV-vQP" secondAttribute="leading" id="4er-6Z-eOd"/>
                                     <constraint firstItem="Mai-BV-vQP" firstAttribute="width" secondItem="Cjy-2M-fPZ" secondAttribute="width" id="EIJ-4d-fDY"/>
-                                    <constraint firstItem="ktn-c3-ftR" firstAttribute="bottom" secondItem="ie7-kc-Jaf" secondAttribute="top" id="LRe-Kw-uKj"/>
                                     <constraint firstItem="Mai-BV-vQP" firstAttribute="bottom" secondItem="z3D-bT-JiQ" secondAttribute="bottom" id="TDQ-iP-PHf"/>
                                     <constraint firstItem="Mai-BV-vQP" firstAttribute="top" secondItem="z3D-bT-JiQ" secondAttribute="top" id="dTG-dQ-U0U"/>
-                                    <constraint firstItem="ktn-c3-ftR" firstAttribute="width" secondItem="Gm2-bv-M4A" secondAttribute="width" id="eDZ-Ga-tIS"/>
                                     <constraint firstItem="Mai-BV-vQP" firstAttribute="trailing" secondItem="z3D-bT-JiQ" secondAttribute="trailing" id="eJK-Z7-a1Y"/>
                                     <constraint firstItem="Mai-BV-vQP" firstAttribute="leading" secondItem="z3D-bT-JiQ" secondAttribute="leading" id="tuo-Tr-1lk"/>
-                                    <constraint firstItem="ktn-c3-ftR" firstAttribute="height" secondItem="Gm2-bv-M4A" secondAttribute="height" multiplier="2.09756" id="yYZ-bd-M7y"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="z3D-bT-JiQ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Cjy-2M-fPZ"/>
@@ -604,18 +659,19 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                     </view>
                     <navigationItem key="navigationItem" id="9nw-wO-rmA"/>
                     <connections>
-                        <outlet property="fifthLabel" destination="J8S-P5-ZDv" id="4zF-Fs-Dd2"/>
                         <outlet property="firstLabel" destination="XwL-8g-IaS" id="TcH-k3-q8f"/>
                         <outlet property="fourthLabel" destination="Gm2-bv-M4A" id="DpV-BR-b6J"/>
+                        <outlet property="htmlLabel" destination="dKE-Wg-oab" id="R2h-1V-DEa"/>
+                        <outlet property="imageLabel" destination="ie7-kc-Jaf" id="59y-AP-GRz"/>
+                        <outlet property="myLabel" destination="Fvj-o3-VFq" id="ueg-kN-Eb3"/>
                         <outlet property="secondLabel" destination="CeY-Uj-qbx" id="fEg-nQ-5HJ"/>
-                        <outlet property="sixthLabel" destination="ie7-kc-Jaf" id="VQx-A5-hSa"/>
                         <outlet property="thirdLabel" destination="vaP-he-BX8" id="6WZ-d8-n78"/>
-                        <outlet property="urlTextView" destination="ktn-c3-ftR" id="uTm-en-EZn"/>
+                        <outlet property="urlLabel" destination="7J4-Hf-Mst" id="BbM-Nd-5NR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ml8-Wz-odx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="2237"/>
+            <point key="canvasLocation" x="1476.8115942028987" y="2236.6071428571427"/>
         </scene>
         <!--NSParagraphStyle-->
         <scene sceneID="YsV-mE-Rop">
@@ -852,6 +908,14 @@ The NSAttributedString class is “toll-free bridged” with its Core Foundation
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                 <color key="value" systemColor="systemBrownColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                <real key="value" value="0.050000000000000003"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
