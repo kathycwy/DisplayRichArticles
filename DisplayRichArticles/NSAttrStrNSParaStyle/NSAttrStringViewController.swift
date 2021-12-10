@@ -2,7 +2,8 @@
 //  NSAttrStringViewController.swift
 //  DisplayRichArticles
 //
-//  Created by C Chan on 18/11/2021.
+//  This view controller controls the two pages for demostrating the general use of NSAttributedString
+//
 //
 
 import UIKit
@@ -19,9 +20,10 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
     @IBOutlet weak var fourthLabel: UILabel!
-    @IBOutlet weak var fifthLabel: UILabel!
-    @IBOutlet weak var sixthLabel: UILabel!
-    @IBOutlet weak var urlTextView: UITextView!
+    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var htmlLabel: UILabel!
+    @IBOutlet weak var imageLabel: UILabel!
+    @IBOutlet weak var urlLabel: UITextView!
     
     @IBOutlet weak var nsAttrStrTextView: UITextView!
     
@@ -39,8 +41,8 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
             self.setSecondLabel()
             self.setThirdLabel()
             self.setFourthLabel()
-            self.setFifthLabel()
-            self.setSixthLabel()
+            self.setHtmlLabel()
+            self.setImageLabel()
         }
     
     }
@@ -78,9 +80,75 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
         return attributedText
     }
     
+    // MARK: Sample code shown in PPT
+    //
+    
+    func setLabelText() {
+        let text = "Hello! ByeBye!"
+        let font = UIFont.systemFont(ofSize: 14)
+        
+        // Step 1. Set attributes that you want to apply
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.red
+        ]
+        
+        // Step 2. Create attributed text
+        let attributedText = NSAttributedString(string: text, attributes: attributes)
+        
+        // Step 3. Display the text
+        self.myLabel.attributedText = attributedText
+    }
+    
+    func setLabelText2() {
+        let text = "Hello! ByeBye!"
+        let font = UIFont.systemFont(ofSize: 14)
+        
+        // Step 1. Set attributes that you want to apply
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.red
+        ]
+        
+        // Step 2. Create attributed text
+        let attributedText = NSMutableAttributedString(string: text, attributes: attributes)
+
+        // Step 3a. Add attibute for "!"
+        // Note:
+        //     * The default addAttribute function will only apply the attribute to the FIRST matched one
+        //       Therefore, if there are more then one "!" in the string. Only the first "!" will become green
+        attributedText.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: UIColor.green,
+            range: getRange(attributedString: text, substr: "!")
+        )
+        
+        // Step 3b. Add multiple attributes for "Bye"
+        // Note:
+        //     * Same as addAttribute, only applys to the FIRST matched substring
+        attributedText.addAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor.blue,
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
+            ],
+            range: getRange(attributedString: text, substr: "Bye")
+        )
+        
+        // Step 4. Display the text
+        self.myLabel.attributedText = attributedText
+    }
+    
+    // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // The code below is to add attributes to an articles which shows the difference between plain and attributed string
+    //
+    // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    // MARK: Demostrate how to add or change attributes for an article
+    //
     func setNsAttrStrTextView(){
         
-        let font = UIFont.systemFont(ofSize: 14)
         let text = """
                     NSAttributedString
                     A string with associated attributes (such as visual style, hyperlinks, or accessibility data) for portions of its text.
@@ -97,17 +165,22 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
                     The NSAttributedString class is “toll-free bridged” with its Core Foundation counterpart, CFAttributedString. See Toll-Free Bridging for more information.
                     """
         
+        // Create and apply attributes for applying to the whole article
+        let font = UIFont.systemFont(ofSize: 14)
+        
         var attributes: [NSAttributedString.Key: Any] = [
             .font: font,
             .foregroundColor: UIColor.label
         ]
-        let shadow : NSShadow = NSShadow()
-           shadow.shadowOffset = CGSize(width: -2.0, height: -2.0)
-           
+        
         var attributedText = NSMutableAttributedString(string: text, attributes: attributes)
         
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: getRange(attributedString: text, substr: "one of the largest research parks in Europe"))
+        // Create shadow attribute
+        let shadow : NSShadow = NSShadow()
+           shadow.shadowOffset = CGSize(width: -2.0, height: -2.0)
         
+        // Apply attibutes to specific sets of string
+        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: getRange(attributedString: text, substr: "one of the largest research parks in Europe"))
         
         attributedText = setAttribute(attributedText: attributedText, targetStr: "(for example, font and kerning)",
                                       attrs:
@@ -147,6 +220,7 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
                                         [.font: UIFont.systemFont(ofSize: 14),
                                          .foregroundColor : UIColor.red])
         
+        // Apply same attibutes to multiple sets of string
         attributes = [
             .font: UIFont.boldSystemFont(ofSize: 18),
             .underlineStyle : 1,
@@ -172,8 +246,17 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
         self.nsAttrStrTextView.isEditable = false
         self.nsAttrStrTextView.isSelectable = false
     }
+    // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    // The code below is for "More Example" page which introduces how we can use NSAttributedString for different purposes
+    //
+    // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     
+    // MARK: Sample 1 -  Setting text attributes (fonts, colours, underline, strokes, shaddow, etc)
+    //
+    
+    // 1.1: Changing font colour
     func setFirstLabel() {
         self.firstLabel.numberOfLines = 0
         let text = "Colourful background"
@@ -211,7 +294,8 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
         
         self.firstLabel.attributedText = attributedText
     }
-
+    
+    // 1.2: Changing font emphasis (Bold, Italic, etc)
     func setSecondLabel() {
         self.secondLabel.numberOfLines = 0
         let text = "Bold Italic BoldItalic CondensedBlack"
@@ -245,6 +329,7 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
         self.secondLabel.attributedText = attributedText
     }
     
+    // 1.3: Changing font emphasis (underline, strick-through)
     func setThirdLabel() {
         self.thirdLabel.numberOfLines = 0
         let text = "underline, double-underline, DashDotDot, strick-through textraised"
@@ -300,6 +385,7 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
         self.thirdLabel.attributedText = attributedText
     }
     
+    // 1.4: Changing text style with shadow and stroke
     func setFourthLabel() {
         self.fourthLabel.numberOfLines = 0
         let text = "shadow, stroke"
@@ -329,52 +415,27 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
         self.fourthLabel.attributedText = attributedText
     }
     
-    func setFifthLabel() {
-        self.sixthLabel.numberOfLines = 0
-        let htmlString = """
-            <!DOCTYPE html>
-            <html>
-            <body>
-            <h1>Hello!</h1>
-            <h3>This is</h3>
-            <h2>a demo text</h2>
-            <h3>created using</h3>
-            <h1>HTML!!</h1>
-            </body>
-            </html>
-        """
+    //
+    // MARK: Sample 2 -  Displaying images using attributed string in UILabel / UITextView
+    //                -  Creating UITextView with a clickable link
+    //
+    func setImageLabel() {
         
-        guard let data = htmlString.data(using: String.Encoding.utf8) else { fatalError("incorrect htmlString") }
-        let attributedText = try! NSMutableAttributedString(
-            data: data,
-            options: [
-                NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
-                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
-            ],
-            documentAttributes: nil
-        )
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.white,
-            .strokeColor: UIColor.red,
-            .strokeWidth: 5
-        ]
-        attributedText.addAttributes(attributes, range: NSRange(location: 0, length: attributedText.length))
-        
-        self.fifthLabel.attributedText = attributedText
-    }
-    
-    
-    func setSixthLabel() {
-        self.fifthLabel.numberOfLines = 0
+        // Attach an image as a text attachment
         let textAttachment = NSTextAttachment()
         textAttachment.image = UIImage(named: "xmas.jpg")
         let imageOffsetY: CGFloat = -15.0
-        textAttachment.bounds = CGRect(x: 0, y: imageOffsetY, width: textAttachment.image!.size.width, height: textAttachment.image!.size.height)
+        textAttachment.bounds = CGRect(x: 0, y: imageOffsetY,
+                                       width: textAttachment.image!.size.width,
+                                       height: textAttachment.image!.size.height)
+        
+        // Convert the text attachment as attributed String
         var attributedText = NSAttributedString(attachment: textAttachment)
         
-        self.sixthLabel.attributedText = attributedText
+        // Display the attributed string in the UILabel
+        self.imageLabel.attributedText = attributedText
         
+        // Set the hyperlink for the source of the image to a UITextView
         let text = "Here is the link of the image"
         let font = UIFont.systemFont(ofSize: 15)
         let attributes: [NSAttributedString.Key: Any] = [
@@ -382,10 +443,51 @@ class NSAttrStringViewController: UIViewController, UITabBarControllerDelegate, 
             .link: "https://pixabay.com/illustrations/christmas-gifts-snow-surprise-3030279/"
         ]
         
-        attributedText = NSMutableAttributedString(string: text, attributes: attributes)
-        
-        self.urlTextView.attributedText = attributedText
+        attributedText = NSAttributedString(string: text, attributes: attributes)
+        self.urlLabel.attributedText = attributedText
     }
+    
+    //
+    // MARK: Sample 3 -  Displaying HTML using attributed string in UILabel / UITextView
+    //
+    func setHtmlLabel() {
+        // Allow multiple lines
+        self.htmlLabel.numberOfLines = 0
+        
+        // Prepare HTML string
+        let htmlString = """
+            <!DOCTYPE html>
+            <html>
+            <body>
+            <h1 style="background-color:DodgerBlue;">Hello!</h1>
+            <h3>This is</h3>
+            <h2 style="margin: 50px;">a demo text</h2>
+            <h3 style="padding: 30px;">created using</h3>
+            <h1 style="background-color:Tomato;">HTML!!</h1>
+            <h1 style="border:2px solid Violet;">Hello World</h1>
+            </body>
+            </html>
+        """
+        
+        // Try to convert the string into a Data instance using Unicode encoding
+        guard let data = htmlString.data(using: String.Encoding.utf8)
+                          else { fatalError("incorrect htmlString") }
+        
+        // Try to load the Data instance as an HTML type
+        let attributedText = try! NSMutableAttributedString(
+            data: data,
+            options: [
+                .documentType: NSAttributedString.DocumentType.html,
+                .characterEncoding: String.Encoding.utf8.rawValue
+            ],
+            documentAttributes: nil
+        )
+        
+        // Display the attributed string in the UILabel
+        self.htmlLabel.attributedText = attributedText
+    }
+    
+    
     // MARK: UITextView Delegate Method
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
 
