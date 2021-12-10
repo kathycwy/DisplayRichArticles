@@ -116,12 +116,18 @@ class WKWebViewWebsiteController: UIViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let host = navigationAction.request.url?.host {
-            if host == "hci.rwth-aachen.de" {
+            print(host)
+            if (host == "hci.rwth-aachen.de") || (host == "www.youtube.com") {
                 decisionHandler(.allow)
                 return
             }
+            else {
+                let alertController = UIAlertController(title: "iOScreator", message:
+                        "Oops! You can't load that URL", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
-
         decisionHandler(.cancel)
     }
         
