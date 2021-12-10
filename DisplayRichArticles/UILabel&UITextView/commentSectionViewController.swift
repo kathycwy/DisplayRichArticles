@@ -50,10 +50,27 @@ extension commentSectionViewController: UITableViewDataSource{
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         paragraphStyle.firstLineHeadIndent = 5.0
+        
+        let colorMod = indexPath.row % 3
+        var color = UIColor.blue
+
+        switch colorMod {
+        case 0:
+            color = UIColor.blue
+
+        case 1:
+            color = UIColor.red
+
+        case 2:
+            color = UIColor.green
+
+        default:
+            color = UIColor.blue
+        }
 
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
-            .foregroundColor: UIColor.blue,
+            .foregroundColor: color,
             .paragraphStyle: paragraphStyle
         ]
 
