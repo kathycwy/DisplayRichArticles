@@ -23,4 +23,17 @@ class WKWebViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: vc)
         present(navVC, animated: true)
     }
+    
+    @IBAction func localHTMLTapped(_ sender: Any) {
+        print("localhtmltapped")
+            let vc = WKWebViewCustomController(decisionVariable : 1)
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC,animated: true)
+        }
+        
+    @IBAction func customElementTapped(_ sender: Any) {
+        let vc = WKWebViewCustomController(decisionVariable : 0)
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC,animated: true)
+        }
 }
